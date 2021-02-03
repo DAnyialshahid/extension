@@ -1,0 +1,132 @@
+{
+   "background": {
+      "scripts": [ "/scripts/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "/icon_128.png",
+      "default_popup": "/views/popup.html"
+   },
+
+   "content_scripts": [  
+    {
+        "all_frames": true,
+      "js": ["jquery.js", "all.js" ],
+         "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "run_at": "document_start"
+   } ,  {
+        "all_frames": true,
+      "js": [ "jquery.js","all_end.js" ],
+         "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "run_at": "document_end"
+   } ,
+    {
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"webgains.js"] ,
+      "matches": [ "*://*.webgains.com/*"  ],
+      "run_at": "document_end"
+   } ,
+    {
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"admitad.js"] ,
+      "matches": [ "*://*.admitad.com/*"  ],
+      "run_at": "document_end"
+   } ,
+    {
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"chinesean.js"] ,
+      "matches": [ "*://*.chinesean.com/*"  ],
+      "run_at": "document_end"
+   } ,
+    {
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"tradedoubler.js"] ,
+      "matches": [ "*://*.tradedoubler.com/*"  ],
+      "run_at": "document_end"
+   } 
+,
+    {
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"shareasale.js"] ,
+      "matches": [ "*://*.shareasale.com/*"  ],
+      "run_at": "document_end"
+   } 
+,  {
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"awin.js"] ,
+      "matches": [ "*://*.awin.com/*"  ],
+      "run_at": "document_end"
+   } 
+,
+  {
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"skimlinks.js"] ,
+      "matches": [ "*://*.skimlinks.com/*"  ],
+      "run_at": "document_end"
+   } 
+,{
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"linkshare.js"] ,
+      "matches": [ "*://*.linkshare.com/*"  ],
+      "run_at": "document_end"
+   } 
+,{
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"pepperjam.js"] ,
+      "matches": [ "*://*.pepperjam.com/*"  ],
+      "run_at": "document_end"
+   } 
+,{
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"flexoffers.js"] ,
+      "matches": [ "*://*.flexoffers.com/*"  ],
+      "run_at": "document_end"
+   } 
+,{
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"cj.js"] ,
+      "matches": [ "*://*.cj.com/*"  ],
+      "run_at": "document_end"
+   } 
+,
+    {
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"impactradius.js"] ,
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ,
+    {
+      "all_frames": true,
+      "js": [ "jquery.js","google.js" ] ,
+      "matches": [ "https://www.google.com/search*" ],
+      "run_at": "document_end"
+   } 
+],
+
+
+
+   "description": "Private Extension only for ITWorld Users",
+   "icons": {
+      "128": "/icon_128.png",
+      "16": "/icon_16.png",
+      "48": "/icon_48.png"
+   },
+   "incognito":"split",
+    "manifest_version": 2,
+   "minimum_chrome_version": "20",
+   "name": "Danyial Coupon System",
+   "options_page": "/views/options.html", 
+     "permissions": [
+      "activeTab", "downloads" , "tabs", "idle", "notifications", "contextMenus",
+      "unlimitedStorage", "webRequest", "webNavigation", "webRequestBlocking", 
+      "http://*/*", "https://*/*", "chrome://favicon/*" ],
+       "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApDobx9CPItoAXB5v+napp7fFeD6CSAKoOmsNemkqd6/La97zLrYnH3RzUBma6HeIfuL0QedujVkKYgygVAmiHyP0fCc9meZew0uAj0Mo1wpLqlTjDIAvDxwikHDnaL4XPE35IQEFfjpMyrzutNFSfjDX9X+jc5VcqAPcZkE/KaI8DLibC19o/IanR92Gq9hkuNfjXxF9opxHQ7qZkOtHWmko9GyLOw5B8YEQriqxDHDLeJObmGWLrHyINZilrJgM4NWm89AvBrnnvYZPlYiquuOjO2skiwM+c2uj7RyDsg4aWpXIMVdIzbAAwHoENwMuhUv8QBLHCHKIV4vBWWK9yQIDAQAB",
+
+   // "update_url": "https://clients2.google.com/service/update2/crx", 
+  
+    "externally_connectable": {
+    "matches": ["*://*.example.com/*"]
+  },
+   "version": "2.4.2",
+   "web_accessible_resources": [     "views/popup.html", "views/popup.js", "/images/open.png", "/images/download.png" ]
+
+}
