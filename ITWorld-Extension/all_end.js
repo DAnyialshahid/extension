@@ -4,6 +4,10 @@ $(document).ready(function() {
 // $('meta[name=extension_installed]').attr('content','3')
 
 if (url.indexOf('retailmenot.com/view/')!=-1) {
+
+if (url.indexOf('?u=')==-1) {
+window.location.href=window.location.href+'?u=danyial';
+}
 	
 
 
@@ -55,7 +59,7 @@ if (url.indexOf('retailmenot.com/view/')!=-1) {
 					'isCircular':'',
 			}
 		}
-		var description=btoa(coupon_details.description);
+		var description=coupon_details.description;
 		var created_date=coupon_details.created;
 		var isExclusive=coupon_details.isExclusive;
 		var isCircular=coupon_details.isCircular;
@@ -65,7 +69,7 @@ if (url.indexOf('retailmenot.com/view/')!=-1) {
 		if (type.html()=='Code') { type='coupon'; }else{ type='deal'; }
 
 		$(v).find('.bBnmHg')
-		.append(' <button   data_type="'+type+'"   data_code="'+code.html()+'"   data_title="'+btoa(title.html())+'"   data_type="'+type+'"    data_desc="'+description+'" isexclusive="'+isExclusive+'" created_date="'+created_date+'"   short_title1="'+short_title1.html()+'"   short_title2="'+short_title2.html()+'" class="copyThis gDAIs " style="padding:6px;min-width:0px;" >Copy</button> ');
+		.append(' <button   data_type="'+btoa(type)+'"   data_code="'+btoa(code.html())+'"   data_title="'+btoa(title.html())+'"   data_type="'+btoa(type)+'"    data_desc="'+btoa(description)+'" isexclusive="'+btoa(isExclusive)+'" created_date="'+btoa(created_date)+'"   short_title1="'+btoa(short_title1.html())+'"   short_title2="'+btoa(short_title2.html())+'" class="copyThis gDAIs " style="padding:6px;min-width:0px;" >Copy</button> ');
 		// label.html('danyial');
 
 	});
@@ -81,14 +85,14 @@ if (url.indexOf('retailmenot.com/view/')!=-1) {
 $('.copyThis').on('click',function() {
 
 var copy_data={
-	'data_type':$(this).attr('data_type').replace('undefined',''),
-	'data_code':$(this).attr('data_code').replace('undefined',''),
+	'data_type':atob($(this).attr('data_type')).replace('undefined',''),
+	'data_code':atob($(this).attr('data_code')).replace('undefined',''),
 	'data_title':atob($(this).attr('data_title')).replace('undefined',''),
-	'data_desc':atob($(this).attr('data_desc')).replace('undefined',''),
-	'created_date':$(this).attr('created_date').replace('undefined',''),
-	'isexclusive':$(this).attr('isexclusive').replace('undefined',''),
-	'short_title1':$(this).attr('short_title1').replace('undefined',''),
-	'short_title2':$(this).attr('short_title2').replace('undefined',''),
+	'data_desc'	:atob($(this).attr('data_desc')).replace('undefined',''),
+	'created_date':atob($(this).attr('created_date')).replace('undefined',''),
+	'isexclusive':atob($(this).attr('isexclusive')).replace('undefined',''),
+	'short_title1':atob($(this).attr('short_title1')).replace('undefined',''),
+	'short_title2':atob($(this).attr('short_title2')).replace('undefined',''),
 }
 console.log(copy_data);
 var strings=JSON.stringify(copy_data);
