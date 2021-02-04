@@ -117,7 +117,7 @@
           <div class="E">
             <a class="Alighting_ButtonCrown"   href="ITWorld-Extension.crx">Install Extension File</a>
             <div class="Alighting_Guarantee"><div class="In">
-              Risk Free Money-Back Guarantee 7-Day
+             
             </div></div>
           </div></div>
       </div>
