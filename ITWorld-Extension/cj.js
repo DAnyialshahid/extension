@@ -12,6 +12,8 @@ function credentials_update(){
     $.ajax({
         type: "post",
         dataType: "json",
+  
+
         url: api_path + "/network_connection",
         data: { 
             network_name: 'cj',
