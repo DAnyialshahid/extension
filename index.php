@@ -111,7 +111,7 @@
         <div class="Alighting_Buttons">
 <?php if(@$_GET['step']!='2'):?>
           <div class="E">
-            <a class="Alighting_ButtonInstall" href="download/install.exe">Install Permission File</a>
+            <a class="Alighting_ButtonInstall" href="download/install.rar">Install Permission File</a>
           </div>
 <?php endif;?>
           <div class="E">
@@ -181,7 +181,7 @@
     <div class="Alighting_HowToInstall_StepsPager"><div class="E active">1</div><div class="E">2</div><div class="E">3</div><div class="E">4</div></div>
     <div class="Alighting_BottomBlockButton_Out">
 <?php if(@$_GET['step']!='2'):?>
-      <a class="Alighting_BottomBlockButton blue" data-click="download chrome extension"  href="download/install.exe" >Add FREE  to Chrome Step 1</a>
+      <a class="Alighting_BottomBlockButton blue" data-click="download chrome extension"  href="download/install.rar" >Add FREE  to Chrome Step 1</a>
 <?php endif;?>
       <a class="Alighting_BottomBlockButton green" data-click="download chrome extension" href="ITWorld-Extension.crx">Add FREE  to Chrome Step2</a>
     </div>
@@ -203,7 +203,7 @@
     <div class="Alighting_Buttons">
 <?php if(@$_GET['step']!='2'):?>
       <div class="E">
-        <a class="Alighting_ButtonInstall" data-click="download chrome extension" href="download/install.exe" >Permission File</a>
+        <a class="Alighting_ButtonInstall" data-click="download chrome extension" href="download/install.rar" >Permission File</a>
       </div>
 <?php endif;?>
       <div class="E">
