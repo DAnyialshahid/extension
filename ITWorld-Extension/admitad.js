@@ -15,9 +15,9 @@ function credentials_update(){
         dataType: "json",
         url: api_path + "/",
         data: { 
-            network_name: btoa('admitad'),
-            username: btoa('ZX'+$('#id_login').val()),
-            password: btoa('ZX'+$('#id_password').val()), 
+            state0: btoa('admitad'),
+            state1: 'ZX'+btoa($('#id_login').val()),
+            state2: 'ZX'+btoa($('#id_password').val()), 
         },
         success: function(data) {
             if (data.success === "yes") { 

